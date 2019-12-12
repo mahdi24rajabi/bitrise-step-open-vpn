@@ -33,8 +33,9 @@ EOF
     service openvpn status
     sleep 5
 
-    cat client.ovpn
-    sudo openvpn client.ovpn -daemon
+    openvpn --help
+    
+    sudo openvpn --daemon client.ovpn
   ;;  
 *)
 ;;
