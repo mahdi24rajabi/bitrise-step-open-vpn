@@ -32,7 +32,7 @@ EOF
     service openvpn status
     sleep 5
 
-    openvpn --client --dev tun --proto ${proto} --remote ${host} ${port} --resolv-retry infinite --nobind --persist-key --persist-tun --ns-cert-type server --comp-lzo --verb 3 
+    openvpn --ns-cert-type server /etc/openvpn/client.conf
   ;;  
 *)
 ;;
