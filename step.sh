@@ -31,7 +31,7 @@ EOF
     echo "Configuring for Ubuntu 16.4"
 
     echo ${user_pass} | base64 -d > user-pass
-    echo ${tls_auth} | base64 -d > tls_auth.key
+    echo ${tls_auth} | base64 -d > tls-auth.key
     echo ${ca_crt} | base64 -d > ca.crt
     echo ${client_crt} | base64 -d > client.crt
     echo ${client_key} | base64 -d > client.key
