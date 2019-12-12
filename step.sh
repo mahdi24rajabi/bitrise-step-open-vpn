@@ -24,8 +24,8 @@ ca ca.crt
 cert client.crt
 key client.key
 EOF
-    service openvpn status
-    service openvpn start client > /dev/null 2>&1
+    service openvpn start
+    #service openvpn start client > /dev/null 2>&1
     sleep 5
     
     echo "$(ifconfig | grep tun0) Hello"
