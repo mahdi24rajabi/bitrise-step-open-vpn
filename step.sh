@@ -11,21 +11,22 @@ case "$OSTYPE" in
     echo ${user_pass} | base64 -d > /etc/openvpn/user-pass
     echo ${tls_auth} | base64 -d > /etc/openvpn/tls-auth.key
 
-    cat <<EOF > /etc/openvpn/client.conf
-client
-dev tun
-proto ${proto}
-remote ${host} ${port}
-resolv-retry infinite
-nobind
-persist-key
-persist-tun
-comp-lzo
-verb 3
-ca ca.crt
-cert client.crt
-key client.key
-EOF
+#     cat <<EOF > /etc/openvpn/client.conf
+# client
+# dev tun
+# proto ${proto}
+# remote ${host} ${port}
+# resolv-retry infinite
+# nobind
+# persist-key
+# persist-tun
+# comp-lzo
+# verb 3
+# ca ca.crt
+# cert client.crt
+# key client.key
+# auth-user-pass user-pass
+# EOF
     service openvpn start
     service openvpn status
     sleep 5
