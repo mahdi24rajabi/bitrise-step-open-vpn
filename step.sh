@@ -8,10 +8,6 @@ case "$OSTYPE" in
     echo ${ca_crt} | base64 -d > /etc/openvpn/ca.crt
     echo ${client_crt} | base64 -d > /etc/openvpn/client.crt
     echo ${client_key} | base64 -d > /etc/openvpn/client.key
-    
-    echo ${ca_crt}
-    echo ${client_crt}
-    echo ${client_key}
 
     cat <<EOF > /etc/openvpn/client.conf
 client
@@ -32,6 +28,7 @@ EOF
     service openvpn start client > /dev/null 2>&1
     sleep 5
 
+    cat /etc/openvpn/client.conf
     if ifconfig | grep tun0 > /dev/null
     then
       echo "VPN connection succeeded"
