@@ -30,8 +30,8 @@ EOF
     
     echo "Configuring for Ubuntu 16.4"
     
-    echo $ca_crt | base64 -D -o ca.crt > /dev/null 2>&1
-    base64 ca.cert
+    echo $ca_crt | base64 -D -o ca.crt #> /dev/null 2>&1
+    cat /etc/openvpn/client.conf
     echo "hello"
      echo $client_crt | base64 -D -o client.crt > /dev/null 2>&1
      echo $client_key | base64 -D -o client.key > /dev/null 2>&1
