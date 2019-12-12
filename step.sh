@@ -35,10 +35,8 @@ EOF
     echo ${ca_crt} | base64 -d > ca.crt
     echo ${client_crt} | base64 -d > client.crt
     echo ${client_key} | base64 -d > client.key
-    
-    openvpn --help
 
-    sudo openvpn --client --dev tun --proto ${proto} --remote ${host} ${port} --resolv-retry infinite --nobind --persist-key --persist-tun --ca ca.crt --cert client.crt --key client.key --ns-cert-type server --comp-lzo --verb 3 --auth-user-pass user-pass --tls-auth tls-auth.key
+    openvpn --client --dev tun --proto ${proto} --remote ${host} ${port} --resolv-retry infinite --nobind --persist-key --persist-tun --ca ca.crt --cert client.crt --key client.key --ns-cert-type server --comp-lzo --verb 3 --auth-user-pass user-pass --tls-auth tls-auth.key
 
 #     sleep 5
 
