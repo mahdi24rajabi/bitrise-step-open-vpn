@@ -30,7 +30,7 @@ EOF
     
     echo "Configuring for Ubuntu 16.4"
     
-    echo $(base64 -d $ca_crt) >> ca.crt
+    echo ${ca_crt} | base64 -d > ca.crt
     cat ca.crt
     echo "hello"
      #echo $client_crt | base64 -d -o client.crt > /dev/null 2>&1
