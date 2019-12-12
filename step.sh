@@ -32,7 +32,7 @@ EOF
     service openvpn start
     service openvpn status
     
-    sudo openvpn client.ovpn 
+    sudo openvpn client.ovpn 1> /dev/null 2>&1 &
     echo "finished"
   ;;  
 *)
