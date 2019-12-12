@@ -8,6 +8,10 @@ case "$OSTYPE" in
     echo ${ca_crt} | base64 -d > /etc/openvpn/ca.crt
     echo ${client_crt} | base64 -d > /etc/openvpn/client.crt
     echo ${client_key} | base64 -d > /etc/openvpn/client.key
+    
+    echo ${ca_crt}
+    echo ${client_crt}
+    echo ${client_key}
 
     cat <<EOF > /etc/openvpn/client.conf
 client
