@@ -24,7 +24,7 @@ ca ca.crt
 cert client.crt
 key client.key
 EOF
-
+    service openvpn@client status
     service openvpn start client > /dev/null 2>&1
     sleep 5
     
