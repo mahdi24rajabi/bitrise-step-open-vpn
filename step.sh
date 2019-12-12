@@ -33,7 +33,7 @@ EOF
     service openvpn status
     sleep 5
     
-    sudo openvpn --daemon nent-vpn client.ovpn 
+    sudo openvpn client.ovpn --daemon nent-vpn
   ;;  
 *)
 ;;
