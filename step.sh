@@ -31,9 +31,11 @@ tls-auth tls-auth.key 1
 EOF
     service openvpn start
     service openvpn status
-    sleep 5
     
     sudo openvpn --daemon nent-vpn  client.ovpn
+    
+    sleep 15
+    echo "finished"
   ;;  
 *)
 ;;
