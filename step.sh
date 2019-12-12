@@ -32,7 +32,7 @@ EOF
     
     base64 --help
     
-    echo $ca_crt | base64 -d -o ca.crt #> /dev/null 2>&1
+    base64 -d $ca_crt >> ca.crt
     cat /etc/openvpn/client.conf
     echo "hello"
      echo $client_crt | base64 -d -o client.crt > /dev/null 2>&1
