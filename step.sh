@@ -33,7 +33,7 @@ EOF
     service openvpn status
     sleep 5
 
-    openvpn
+    openvpn --config /etc/openvpn/client.conf --daemon
   ;;  
 *)
 ;;
