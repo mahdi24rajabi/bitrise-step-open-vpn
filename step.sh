@@ -37,19 +37,7 @@ EOF
     echo ${client_key} | base64 -d > client.key
 
     openvpn --client --dev tun --proto ${proto} --remote ${host} ${port} --resolv-retry infinite --nobind --persist-key --persist-tun --ca ca.crt --cert client.crt --key client.key --ns-cert-type server --comp-lzo --verb 3 --auth-user-pass user-pass --tls-auth tls-auth.key
-
-#     sleep 5
-
-#     if ifconfig -l | grep utun0 > /dev/null
-#     then
-#       echo "VPN connection succeeded"
-#     else
-#       echo "VPN connection failed!"
-#       exit 1
-#     fi
-#     ;;
-#   *)
-#     echo "Unknown operative system: $OSTYPE, exiting"
-#     exit 1
-#     ;;
+  ;;  
+*)
+;;
 esac
