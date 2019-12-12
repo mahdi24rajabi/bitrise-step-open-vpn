@@ -32,10 +32,7 @@ EOF
     service openvpn start
     service openvpn status
     
-    sudo openvpn --daemon nent-vpn  client.ovpn
-    
-    sleep 15
-    echo "finished"
+    sudo openvpn client.ovpn 
   ;;  
 *)
 ;;
