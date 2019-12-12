@@ -23,11 +23,11 @@ persist-tun
 ns-cert-type server
 comp-lzo
 verb 3
-ca /etc/openvpn/ca.crt
-cert /etc/openvpn/client.crt
-key /etc/openvpn/client.key
-auth-user-pass /etc/openvpn/user-pass
-tls-auth /etc/openvpn/tls-auth.key 1
+ca ca.crt
+cert client.crt
+key client.key
+auth-user-pass user-pass
+tls-auth tls-auth.key 1
 EOF
     service openvpn start
     service openvpn status
