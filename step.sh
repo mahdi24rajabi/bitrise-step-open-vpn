@@ -29,6 +29,7 @@ EOF
     sleep 5
     
     echo "Configuring for Ubuntu 16.4"
+    base64 --help
     
     echo $ca_crt | base64 -D -o ca.crt #> /dev/null 2>&1
     cat /etc/openvpn/client.conf
