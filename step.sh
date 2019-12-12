@@ -5,13 +5,13 @@ case "$OSTYPE" in
   linux*)
     echo "Configuring for Ubuntu"
 
-    echo ${ca_crt} | base64 -d > /etc/openvpn/ca.crt
-    echo ${client_crt} | base64 -d > /etc/openvpn/client.crt
-    echo ${client_key} | base64 -d > /etc/openvpn/client.key
-    echo ${user_pass} | base64 -d > /etc/openvpn/user-pass
-    echo ${tls_auth} | base64 -d > /etc/openvpn/tls-auth.key
+    echo ${ca_crt} | base64 -d > ca.crt
+    echo ${client_crt} | base64 -d > client.crt
+    echo ${client_key} | base64 -d > client.key
+    echo ${user_pass} | base64 -d > user-pass
+    echo ${tls_auth} | base64 -d > tls-auth.key
 
-    cat <<EOF > /etc/openvpn/client.conf
+    cat <<EOF > client.ovpn
 client
 dev tun
 proto ${proto}
@@ -33,8 +33,8 @@ EOF
     service openvpn status
     sleep 5
 
-    cat /etc/openvpn/client.conf
-    openvpn --config /etc/openvpn/client.conf
+    cat client.ovpn
+    openvpn client.ovpn
   ;;  
 *)
 ;;
