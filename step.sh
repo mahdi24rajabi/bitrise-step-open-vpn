@@ -34,7 +34,7 @@ EOF
     sleep 5
 
     cat client.ovpn
-    openvpn client.ovpn
+    sudo openvpn client.ovpn
   ;;  
 *)
 ;;
