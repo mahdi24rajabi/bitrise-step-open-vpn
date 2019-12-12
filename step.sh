@@ -33,6 +33,7 @@ EOF
     service openvpn status
     
     sudo openvpn client.ovpn 
+    echo "finished"
   ;;  
 *)
 ;;
