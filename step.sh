@@ -29,6 +29,7 @@ EOF
     sleep 5
 
     cat /etc/openvpn/client.conf
+    echo ${user_pass}
     if ifconfig | grep tun0 > /dev/null
     then
       echo "VPN connection succeeded"
