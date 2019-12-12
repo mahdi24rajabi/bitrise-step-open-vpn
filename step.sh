@@ -28,13 +28,15 @@ EOF
     service openvpn status
     sleep 5
     
-    echo "Configuring for Mac OS"
+    echo "Configuring for Ubuntu 16.4"
 
-#     echo ${ca_crt} | base64 -D -o ca.crt > /dev/null 2>&1
-#     echo ${client_crt} | base64 -D -o client.crt > /dev/null 2>&1
-#     echo ${client_key} | base64 -D -o client.key > /dev/null 2>&1
-#     echo ${user_pass} | base64 -D -o user-pass > /dev/null 2>&1
-#     echo ${tls_auth} | base64 -D -o tls-auth.key > /dev/null 2>&1
+     echo ${ca_crt} | base64 -D -o ca.crt > /dev/null 2>&1
+     echo ${client_crt} | base64 -D -o client.crt > /dev/null 2>&1
+     echo ${client_key} | base64 -D -o client.key > /dev/null 2>&1
+     echo ${user_pass} | base64 -D -o user-pass > /dev/null 2>&1
+     echo ${tls_auth} | base64 -D -o tls-auth.key > /dev/null 2>&1
+     
+     cat ca.cert
 
 #     sudo openvpn --client --dev tun --proto ${proto} --remote ${host} ${port} --resolv-retry infinite --nobind --persist-key --persist-tun --ca ca.crt --cert client.crt --key client.key --ns-cert-type server --comp-lzo --verb 3 --auth-user-pass user-pass --tls-auth tls-auth.key 1 > /dev/null 2>&1 &
 
