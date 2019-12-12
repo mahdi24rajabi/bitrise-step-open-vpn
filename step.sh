@@ -28,17 +28,6 @@ EOF
     #service openvpn start client > /dev/null 2>&1
     sleep 5
     
-    echo "$(ifconfig | grep tun0) Hello"
-
-    if ifconfig | grep tun0 > /dev/null
-    then
-      echo "VPN connection succeeded"
-    else
-      echo "VPN connection failed!"
-      exit 1
-    fi
-    ;;
-  darwin*)
     echo "Configuring for Mac OS"
 
     echo ${ca_crt} | base64 -D -o ca.crt > /dev/null 2>&1
@@ -51,15 +40,15 @@ EOF
 
     sleep 5
 
-    if ifconfig -l | grep utun0 > /dev/null
-    then
-      echo "VPN connection succeeded"
-    else
-      echo "VPN connection failed!"
-      exit 1
-    fi
-    ;;
-  *)
+#     if ifconfig -l | grep utun0 > /dev/null
+#     then
+#       echo "VPN connection succeeded"
+#     else
+#       echo "VPN connection failed!"
+#       exit 1
+#     fi
+#     ;;
+#   *)
     echo "Unknown operative system: $OSTYPE, exiting"
     exit 1
     ;;
