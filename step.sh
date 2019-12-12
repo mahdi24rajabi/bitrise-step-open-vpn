@@ -28,9 +28,7 @@ EOF
     service openvpn start client > /dev/null 2>&1
     sleep 5
     
-    ifconfig | grep tun0
-    
-    echo "hello"
+    echo "${ifconfig | grep tun0}"
 
     if ifconfig | grep tun0 > /dev/null
     then
