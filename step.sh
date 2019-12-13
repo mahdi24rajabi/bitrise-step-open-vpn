@@ -23,7 +23,7 @@ persist-tun
 ns-cert-type server
 comp-lzo
 verb 3
-ca ca.crt
+ca /etc/openvpn/ca.crt
 cert /etc/openvpn/client.crt
 key /etc/openvpn/client.key
 auth-user-pass /etc/openvpn/user-pass
