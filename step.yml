@@ -88,14 +88,14 @@ inputs:
       is_sensitive: true
   - user_pass: "$VPN_USER_PASS"
     opts:
-      title: "A title"
+      title: "User and password of VPN - BASE64"
       summary: "A summary"
       is_expand: true
       is_required: true
       is_sensitive: true
   - tls_auth: "$VPN_TLS_AUTH"
     opts:
-      title: "A title"
+      title: "TLS"
       summary: "A summary"
       is_expand: true
       is_required: true
